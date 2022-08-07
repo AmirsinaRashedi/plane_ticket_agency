@@ -1,0 +1,19 @@
+package repository.Impl;
+
+import base.repository.impl.BaseRepositoryImpl;
+import domain.Airline;
+import repository.AirlineRepository;
+import util.HibernateUtil;
+
+public class AirlineRepositoryImpl extends BaseRepositoryImpl<Airline, Long>
+        implements AirlineRepository {
+
+    public AirlineRepositoryImpl() {
+        super(HibernateUtil.getEntityManager());
+    }
+
+    @Override
+    public Class<Airline> getClassType() {
+        return Airline.class;
+    }
+}
