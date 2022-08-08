@@ -35,4 +35,13 @@ public class Ticket extends BaseEntity<Long> {
     public void setFlight(Flight flight) {
         this.flight = flight;
     }
+
+    @Override
+    public String toString() {
+
+        return passenger.toString()
+                + "   "
+                + flight.toString();
+
+    }
 }

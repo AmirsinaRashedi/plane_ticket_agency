@@ -76,4 +76,15 @@ public class Flight extends BaseEntity<Long> {
     public void setAirline(Airline airline) {
         this.airline = airline;
     }
+
+    @Override
+    public String toString() {
+
+        return "Origin: " + origin
+                + " Destination: " + destination
+                + " price: " + price
+                + " Available seats: " + availableSeats;
+
+    }
+
 }

@@ -33,4 +33,13 @@ public class Airline extends BaseEntity<Long> {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+
+        return "Airline: "
+                + name;
+
+    }
+
 }
