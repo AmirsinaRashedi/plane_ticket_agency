@@ -17,4 +17,11 @@ public class PassengerRepositoryImpl extends BaseRepositoryImpl<Passenger, Long>
     public Class<Passenger> getClassType() {
         return Passenger.class;
     }
+
+    @Override
+    public Passenger findByUsername(String username) {
+        return em.createQuery("select p from Passenger p where p.username = :username", Passenger.class)
+                .setParameter("username", username)
+                .getSingleResult();
+    }
 }
