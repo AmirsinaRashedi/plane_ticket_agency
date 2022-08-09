@@ -147,17 +147,13 @@ public class FlightServiceImpl extends BaseServiceImpl<Flight, Long, FlightRepos
 
             newFlight.setAvailableSeats(intInput.nextInt());
 
-            repository.beginTransaction();
-
             save(newFlight);
-
-            repository.commitTransaction();
 
             return true;
 
         } catch (Exception e) {
 
-            repository.rollbackTransaction();
+            System.out.println("new flight not created!");
 
             return false;
 
