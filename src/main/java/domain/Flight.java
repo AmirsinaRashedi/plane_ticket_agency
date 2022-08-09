@@ -4,11 +4,13 @@ import base.domain.BaseEntity;
 import jakarta.persistence.Entity;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import org.hibernate.annotations.Where;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = Flight.TABLE_NAME)
+@Where(clause = "availableSeats > 0")
 public class Flight extends BaseEntity<Long> {
 
     public static final String TABLE_NAME = "flights";
@@ -59,6 +61,10 @@ public class Flight extends BaseEntity<Long> {
 
     public void setAvailableSeats(int availableSeats) {
         this.availableSeats = availableSeats;
+    }
+
+    public void fillOneSeat() {
+        availableSeats--;
     }
 
     public int getPrice() {
