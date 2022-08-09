@@ -10,4 +10,6 @@ public interface TicketService extends BaseService<Ticket, Long> {
 
     List<Ticket> getByPassenger(Passenger passenger);
 
+    boolean buyTicket(Passenger passenger);
+
 }
