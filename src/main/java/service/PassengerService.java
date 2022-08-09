@@ -7,4 +7,6 @@ public interface PassengerService extends BaseService<Passenger, Long> {
 
     Passenger findByUsername(String username);
 
+    boolean createPassenger();
+
 }
